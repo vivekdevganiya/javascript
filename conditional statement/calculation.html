@@ -1,0 +1,56 @@
+
+<script>
+
+    function add(x,y){
+            return x + y;
+        }
+    
+        function sub(x,y){
+            return x - y;
+        }
+    
+        function multiple(x,y){
+            return x * y;
+        }
+    
+        function devide(x,y){
+            return x / y;
+        }
+    
+        function per(x,y){
+            return x % y;
+        }
+    
+        let a=parseFloat(prompt('1.add,2.sub,3.multiple,4.divide,5.per'))
+    
+        let x=parseFloat(prompt('enter a first value'));
+        let y=parseFloat(prompt('enter a second value'));
+    
+        switch(a){
+            case 1:
+                console.log(add(x,y));
+                break;
+    
+                case 2:
+                console.log(sub(x,y));
+                break;
+    
+                case 3:
+                console.log(multiple(x,y));
+                break;
+    
+                case 4:
+                console.log(divide(x,y));
+                break;
+    
+                case 5:
+                console.log(per(x,y));
+                break;
+    
+            default:
+            console.log(`no data`);
+           
+        }
+    
+    
+    </script>
