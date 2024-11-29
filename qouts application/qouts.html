@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes Application</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQua5OchHKmPp5HDoIa0WPGg49pNzhQJrmnGQ&s);
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .quote-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        #quote-box {
+            font-size: 18px;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        #author {
+            font-size: 16px;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="quote-container">
+        <h1>Quote application</h1>
+        <div id="quote-box">
+            <p id="quote">"The only way to do great work is to love what you do."</p>
+            <p id="author">- Steve Jobs</p>
+        </div>
+        <button id="new-quote-btn">New Quote</button>
+    </div>
+
+    <script>
+
+        const quotes = [
+            {
+                quote: "None can teach you, none can make you spiritual. There is no other teacher but your own soul",
+                author: "vivekanand"
+            },
+            {
+                quote: "Success is not the key to happiness. Happiness is the key to success.",
+                author: "Albert Schweitzer"
+            },
+            {
+                quote: "The purpose of life is not to be happy. It is to be useful, to be honorable, to be compassionate, to have it make some difference that you have lived and lived well.",
+                author: "Ralph Waldo Emerson"
+            },
+            {
+                quote: "Believe you can and you're halfway there.",
+                author: "Theodore Roosevelt"
+            },
+            {
+                quote: "In the end, it's not the years in your life that count. It's the life in your years.",
+                author: "Abraham Lincoln"
+            },
+            {
+                quote: "You must be the change you wish to see in the world.",
+                author: "Mahatma Gandhi"
+            },
+            {
+                quote: "The only impossible journey is the one you never begin.",
+                author: "Tony Robbins"
+            }
+        ];
+
+        function newQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const randomQuote = quotes[randomIndex];
+
+            document.getElementById('quote').textContent = `"${randomQuote.quote}"`;
+            document.getElementById('author').textContent = `- ${randomQuote.author}`;
+        }
+
+
+        newQuote();
+
+        document.getElementById('new-quote-btn').addEventListener('click', newQuote);
+
+    </script>
+</body>
+
+</html>
